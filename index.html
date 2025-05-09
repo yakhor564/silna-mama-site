@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Сильна мама — щаслива дитина</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -12,17 +11,18 @@
       background-color: #23335e;
       color: white;
     }
-    section, header, footer {
+    header, section, footer {
       padding: 40px 20px;
       text-align: center;
     }
-    h1, h2 {
-      margin-bottom: 20px;
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
     }
-    p, ol, ul {
-      max-width: 700px;
-      margin: 10px auto;
-      text-align: left;
+    p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto 30px;
     }
     .button {
       background-color: #ffd700;
@@ -39,50 +39,6 @@
     .button:hover {
       background-color: #ffcc00;
     }
-    .tariffs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .tariff-card {
-      background: #2c4173;
-      padding: 20px;
-      border-radius: 10px;
-      width: 280px;
-      text-align: left;
-    }
-    .tariff-card h3 {
-      color: gold;
-    }
-    .price {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .tariff-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .reviews-carousel {
-      overflow: hidden;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .review-track {
-      display: flex;
-      gap: 20px;
-      width: max-content;
-    }
-    .review {
-      background: #1c2f5c;
-      padding: 20px;
-      border-radius: 10px;
-      min-width: 280px;
-      font-style: italic;
-    }
   </style>
 </head>
 <body>
@@ -90,64 +46,14 @@
 <header>
   <h1>Сильна мама — щаслива дитина</h1>
   <p>Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-  <button class="button" onclick="location.href='#purchase'">Придбати книгу</button>
+  <a href="#purchase"><button class="button">Придбати книгу</button></a>
 </header>
 
 <section>
   <h2>Про книгу</h2>
-  <p>Ця книга народилася з бажання підтримати кожну маму, яка не боїться брати відповідальність за щастя своєї дитини. В ній — не теорія, а справжні, практичні розмови. Про любов. Про межі. Про силу мами. Написана просто — як лист підтримки. Для тебе.</p>
+  <p>
+    Ця книга народилася з бажання підтримати кожну маму, яка не боїться брати відповідальність за щастя своєї дитини.
+    В ній — не теорія, а справжні, практичні розмови. Про любов. Про межі. Про силу мами.
+    Написана просто — як лист підтримки. Для тебе.
+  </p>
 </section>
-
-<section>
-  <h2>Тарифи</h2>
-  <div class="tariffs">
-    <div class="tariff-card">
-      <h3>PDF-книга</h3>
-      <div class="price">200₴</div>
-      <ul class="tariff-list">
-        <li>✅ Книга у форматі PDF</li>
-        <li>✅ Telegram-група для мам</li>
-        <li>❌ Іменний підпис від автора</li>
-        <li>❌ Година консультація з автором</li>
-      </ul>
-    </div>
-    <div class="tariff-card">
-      <h3>Друкована книга</h3>
-      <div class="price">400₴</div>
-      <ul class="tariff-list">
-        <li>✅ Друкована книга</li>
-        <li>✅ Telegram-група для мам</li>
-        <li>✅ Іменний підпис від автора</li>
-        <li>❌ Година консультація з автором</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="purchase">
-  <h2>Як придбати книгу</h2>
-  <ol>
-    <li>Оплатіть книгу на “Банку” Monobank: <code>1234567</code></li>
-    <li>Зробіть скріншот</li>
-    <li>Надішліть його в Telegram: <a href="https://t.me/1234567">@1234567</a></li>
-  </ol>
-</section>
-
-<section>
-  <h2>Відгуки</h2>
-  <div class="reviews-carousel">
-    <div class="review-track">
-      <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
-      <div class="review">“Читається легко, а змінює — глибоко.”</div>
-      <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a></p>
-  <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
-</footer>
-
-</body>
-</html>
