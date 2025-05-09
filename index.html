@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сильна мама — щаслива дитина</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; background-color: #0e1a40; color: white; }
+    header, section, footer { padding: 40px 20px; text-align: center; }
+    h1 { font-size: 2em; margin-bottom: 10px; }
+    h2 { font-size: 1.5em; margin-top: 40px; }
+    p { max-width: 600px; margin: 10px auto; }
+    .button { background: white; color: #0e1a40; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; }
+    .yellow-box { background: gold; width: 200px; height: 120px; margin: 20px auto; border-radius: 8px; animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
+    .card { background: #162d64; padding: 20px; border-radius: 10px; width: 250px; text-align: left; }
+    ol { text-align: left; max-width: 600px; margin: auto; }
+    a { color: gold; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Сильна мама — щаслива дитина</h1>
+  <p>Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
+  <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })">Придбати книгу</button>
+</header>
+
+<section>
+  <h2>Про книгу</h2>
+  <p>Практичний гід для мам, які виховують дітей самостійно. Вона охоплює найважливіші теми виховання, емоційного розвитку та підтримки дітей.</p>
+  <div class="yellow-box"></div>
+</section>
+
+<section>
+  <h2>Що ви отримаєте</h2>
+  <div class="grid">
+    <div class="card"><ul><li>Тема 1</li><li>Тема 2</li><li>Тема 3</li><li>Тема 4</li><li>Тема 5</li><li>Тема 6</li><li>Тема 7</li><li>Тема 8</li><li>Тема 9</li><li>Тема 10</li></ul></div>
+    <div class="card"><ul><li>Тема 11</li><li>Тема 12</li><li>Тема 13</li><li>Тема 14</li><li>Тема 15</li><li>Тема 16</li><li>Тема 17</li><li>Тема 18</li><li>Тема 19</li><li>Тема 20</li></ul></div>
+    <div class="card"><ul><li>Тема 21</li><li>Тема 22</li><li>Тема 23</li><li>Тема 24</li><li>Тема 25</li><li>Тема 26</li><li>Тема 27</li><li>Тема 28</li><li>Тема 29</li><li>Тема 30</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Про автора</h2>
+  <p>Маючи дві вищі освіти — журналістику й соціологію, я завжди мріяв допомагати людям через тексти. Після загибелі мого батька на війні я усвідомив, яку біль переживають діти без тата. Пройшовши 3 роки досвіду в міжнародних організаціях із захисту населення, зокрема дітей, я поєднав практичні знання з підходами провідних світових психологів. Так народилася ця книжка — щира, легка і змістовна. Вона — ваша підтримка.</p>
+</section>
+
+<section id="purchase">
+  <h2>Як придбати книгу</h2>
+  <ol>
+    <li>Оплатіть книгу на “Банку” Monobank: <code>1234567</code></li>
+    <li>Зробіть скріншот чека</li>
+    <li>Надішліть його в Telegram: <a href="https://t.me/1234567">@1234567</a> — вам відповість менеджер і надішле книгу</li>
+  </ol>
+  <br>
+  <button class="button">Перейти до оплати</button>
+</section>
+
+<footer>
+  <p>Зв'язок: <a href="https://t.me/1234567">Telegram</a> | <a href="#">Instagram</a></p>
+  <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
+</footer>
+
+</body>
+</html>
