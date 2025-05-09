@@ -98,8 +98,9 @@ header {
 <header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
   <h1 style="margin-bottom: 10px; font-size: 2.2em; max-width: 90vw; text-align: center;">Сильна мама — щаслива дитина</h1>
   <p style="margin-bottom: 30px; font-size: 1.1em; max-width: 90vw; text-align: center;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-  <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })">
-    Придбати книгу
+<button class="button" onclick="smoothScrollTo('purchase')">
+  Придбати книгу
+</button>
   </button>
 </header>
 
@@ -328,6 +329,14 @@ header {
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: false });
+</script>
+<script>
+  function smoothScrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offsetTop = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  }
 </script>
 </body>
 </html>
