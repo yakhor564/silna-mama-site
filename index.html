@@ -98,7 +98,7 @@ header {
 <header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
   <h1 style="margin-bottom: 10px; font-size: 2.2em; max-width: 90vw; text-align: center;">Сильна мама — щаслива дитина</h1>
   <p style="margin-bottom: 30px; font-size: 1.1em; max-width: 90vw; text-align: center;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-<button class="button" onclick="smoothScrollTo('purchase')">
+<button class="button" onclick="scrollToTarget('purchase')">
   Придбати книгу
 </button>
   </button>
@@ -325,17 +325,28 @@ header {
   <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
   <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
 </footer>
+<script>
+  function scrollToTarget(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: false });
-</script>
-<script>
-  function smoothScrollTo(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const offsetTop = el.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 800;
+    let start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percent = Math.min(progress / duration, 1);
+      window.scrollTo(0, startPosition + distance * percent);
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
   }
 </script>
 </body>
