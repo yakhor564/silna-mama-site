@@ -77,19 +77,31 @@ header {
   text-align: center;
   padding: 40px 20px;
 }
+.button {
+  background-color: #ffd700; /* золота */
+  color: #1c2b4d;            /* темно-синій текст */
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #ffcc00;
+}
   </style>
 </head>
 <body>
 <header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
-  <h1 style="margin: 0 0 10px 0;">Сильна мама — щаслива дитина</h1>
-  <p style="margin: 0 0 30px 0; max-width: 600px;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-<header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;" data-aos="fade-down">
-  <div style="max-width: 90vw;">
-    <h1 style="margin: 0 0 15px 0; font-size: 2em;">Сильна мама — щаслива дитина</h1>
-    <p style="margin: 0 0 30px 0; font-size: 1.1em;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-  </div>
-  <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth', block: 'start' })">
-    Придбати книгу
+  <h1 style="margin-bottom: 10px; font-size: 2.2em; max-width: 90vw; text-align: center;">Сильна мама — щаслива дитина</h1>
+  <p style="margin-bottom: 30px; font-size: 1.1em; max-width: 90vw; text-align: center;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
+<button class="button" onclick="smoothScrollTo('purchase')">
+<button class="button" onclick="scrollToTarget('purchase')">
+  Придбати книгу
+</button>
   </button>
 </header>
 
@@ -201,31 +213,31 @@ header {
     <div class="tariff-card">
       <h3>PDF-книга</h3>
       <div class="price">200₴</div>
-      <ul>
-        <li>✅ Книга з 30 темами у PDF</li>
+      <ul class="tariff-list">
+        <li>✅ Книга у форматі PDF</li>
         <li>✅ Telegram-група для мам</li>
-        <li>❌ Іменний підпис</li>
-        <li>❌ Консультація з автором</li>
+        <li>❌ Іменний підпис від автора</li>
+        <li>❌ Година консультація з автором</li>
       </ul>
     </div>
     <div class="tariff-card">
       <h3>Друкована книга</h3>
       <div class="price">400₴</div>
-      <ul>
-        <li>✅ Друкована версія з 30 темами</li>
-        <li>✅ Telegram-група</li>
+      <ul class="tariff-list">
+        <li>✅ Друкована книга </li>
+        <li>✅ Telegram-група для мам</li>
         <li>✅ Іменний підпис від автора</li>
-        <li>❌ Консультація з автором</li>
+        <li>❌ Година консультація з автором</li>
       </ul>
     </div>
     <div class="tariff-card">
-      <h3>Книга + консультація</h3>
+      <h3>Друкована книга + консультація</h3>
       <div class="price">1200₴</div>
-      <ul>
-        <li>✅ Друкована версія з 30 темами</li>
-        <li>✅ Telegram-група</li>
+      <ul class="tariff-list">
+        <li>✅ Друкована книга </li>
+        <li>✅ Telegram-група для мам </li>
         <li>✅ Іменний підпис від автора</li>
-        <li>✅ 1 година консультації з автором</li>
+        <li>✅ Година консультація з автором</li>
       </ul>
     </div>
   </div>
@@ -243,6 +255,26 @@ header {
   <h2>Відгуки</h2>
   <div class="reviews-carousel">
     <div class="review-track">
+  <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
+  <div class="review">“Читається легко, а змінює — глибоко.”</div>
+  <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
+  <div class="review">“Найкраща інвестиція за 200 грн.”</div>
+  <div class="review">“Кожна тема — як окрема терапія.”</div>
+  <div class="review">“Чоловік теж зацікавився після кількох сторінок!”</div>
+  <div class="review">“Нарешті щось практичне, а не вода.”</div>
+  <div class="review">“Моя подруга вже теж читає — їй зайшло.”</div>
+  <div class="review">“Змінила підхід до виховання — і діти це відчули.”</div>
+  <div class="review">“Сама не очікувала, що книжка мене зворушить.”</div>
+  <div class="review">“Брала як експеримент, а тепер читаю щодня.”</div>
+  <div class="review">“Змістово, красиво, доступно — все як треба.”</div>
+  <div class="review">“Було відчуття, що автор говорить зі мною.”</div>
+  <div class="review">“Книга, яку хочеться подарувати кожній мамі.”</div>
+  <div class="review">“Сильно. Щиро. Дякую за цю працю.”</div>
+  <div class="review">“Тепер розумію, що значить — бути опорою.”</div>
+  <div class="review">“Після 3-го розділу сльози на очах.”</div>
+  <div class="review">“Тепер я не боюсь бути мамою без тата поруч.”</div>
+  <div class="review">“Це не просто книжка — це розмова по душі.”</div>
+  <div class="review">“Тепер я впевнена: сильна мама — це я.”</div>
       <div class="review">“Ця книга допомогла мені зрозуміти мою дитину глибше.”</div>
       <div class="review">“Проста, щира і дуже сильна підтримка.”</div>
       <div class="review">“Після кожного розділу хочеться діяти.”</div>
@@ -268,7 +300,7 @@ header {
   .review-track {
     display: flex;
     gap: 20px;
-   animation: scrollReviews 150s infinite ease-in-out;
+ animation: scrollReviews 400s ease-in-out forwards;
     width: max-content;
   }
   .review {
@@ -285,6 +317,10 @@ header {
     66% { transform: translateX(-200%); }
     100% { transform: translateX(0); }
   }
+.tariff-list {
+  list-style-type: none;
+  padding-left: 0;
+}
 </style>
 <footer data-aos="fade-up">
   <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
@@ -295,5 +331,33 @@ header {
 <script>
   AOS.init({ duration: 1000, once: false });
 </script>
+<script>
+  function smoothScrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const offsetTop = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  function scrollToTarget(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 800;
+    let start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percent = Math.min(progress / duration, 1);
+      window.scrollTo(0, startPosition + distance * percent);
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+</script>
 </body>
-</html>
