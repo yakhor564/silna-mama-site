@@ -1,1 +1,26 @@
-<!DOCTYPE html><html lang='uk'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Сильна мама — щаслива дитина</title><link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet' /><style>body{margin:0;font-family:sans-serif;background-color:#203864;color:white;scroll-behavior:smooth;}section,header,footer{padding:40px 20px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.2);}h1,h2{margin-bottom:20px;}p,ol,ul{max-width:700px;margin:10px auto;text-align:left;}.button{background:white;color:#203864;padding:10px 20px;border:none;cursor:pointer;font-weight:bold;}a{color:gold;text-decoration:underline;}.tariffs,.grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px;}.tariff-card{background:#2b4a7f;padding:20px;border-radius:10px;width:300px;text-align:left;}.price{font-size:24px;font-weight:bold;margin:10px 0;}.features li::before{content:'✔️ ';color:lightgreen;}.features .no::before{content:'❌ ';color:red;}#purchase{background-color:#324c7d;}footer{font-size:0.9em;color:#ccc;}</style></head><body><header><h1>Сильна мама — щаслива дитина</h1><p>Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p><button class='button' onclick="document.getElementById('purchase').scrollIntoView({behavior:'smooth'})">Придбати книгу</button></header><section><h2>Про книгу</h2><p>Ця книга народилася з бажання підтримати кожну маму, яка не боїться брати відповідальність за щастя своєї дитини. В ній — не теорія, а справжні, практичні розмови. Про любов. Про межі. Про силу мами. Написана просто — як лист підтримки. Для тебе.</p><div style='width:240px;height:360px;background:url(book_front.jpg) center/cover;border-radius:10px;margin:0 auto;'></div></section>
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сильна мама — щаслива дитина</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; font-family: sans-serif; background-color: #1b2b54; color: white; scroll-behavior: smooth; }
+    #content { padding-bottom: 60px; }
+  </style>
+</head>
+<body>
+  <div id="content">Завантаження сайту...</div>
+  <script>
+    fetch('sections.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+        AOS.init({ duration: 1000, once: false });
+      });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
