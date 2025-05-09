@@ -325,11 +325,25 @@ header {
   <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
 </footer>
 <script>
- function scrollToTarget(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const offsetTop = el.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  function scrollToTarget(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 600;
+    let start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percent = Math.min(progress / duration, 1);
+      window.scrollTo(0, startPosition + distance * percent);
+      if (progress < duration) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
   }
 </script>
 </body>
