@@ -73,9 +73,9 @@
   </style>
 </head>
 <body>
-<header style="text-align: center;" data-aos="fade-down">
+<header style="display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
   <h1 style="margin-bottom: 0;">Сильна мама — щаслива дитина</h1>
-  <p style="margin: 10px auto 30px auto; max-width: 600px;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
+  <p style="margin: 10px 0 30px 0; max-width: 600px;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
   <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth', block: 'start' })">
     Придбати книгу
   </button>
@@ -273,6 +273,10 @@
     66% { transform: translateX(-200%); }
     100% { transform: translateX(0); }
   }
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 </style>
 <footer data-aos="fade-up">
   <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
