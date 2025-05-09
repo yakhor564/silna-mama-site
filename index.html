@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: #23335e; /* світліший фон */
+      background-color: #23335e;
       color: white;
       scroll-behavior: smooth;
     }
@@ -73,13 +73,14 @@
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>Сильна мама — щаслива дитина</h1>
-    <p>Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-    <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })">
-      Придбати книгу
-    </button>
-  </header>
+<header style="text-align:center;" data-aos="fade-down">
+  <h1 style="margin-bottom: 10px;">Сильна мама — щаслива дитина</h1>
+  <p style="margin: 0 auto; max-width: 600px;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
+  <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth', block: 'start' })">
+    Придбати книгу
+  </button>
+</header>
+
 <section data-aos="fade-up">
   <h2>Про книгу</h2>
   <p>
@@ -87,47 +88,89 @@
     В ній — не теорія, а справжні, практичні розмови. Про любов. Про межі. Про силу мами.
     Написана просто — як лист підтримки. Для тебе.
   </p>
-  <div style="width: 240px; height: 360px; background: url('book_front.jpg') center/cover; margin: 20px auto; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);"></div>
+  <div class="book-3d">
+    <div class="book-inner">
+      <div class="book-front"></div>
+      <div class="book-back"></div>
+    </div>
+  </div>
 </section>
 
+<style>
+  .book-3d {
+    perspective: 1000px;
+    width: 240px;
+    height: 360px;
+    margin: 20px auto;
+  }
+  .book-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: flip 6s infinite alternate ease-in-out;
+  }
+  .book-front, .book-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  .book-front {
+    background-image: url('book_front.jpg');
+  }
+  .book-back {
+    background-image: url('book_back.jpg');
+    transform: rotateY(180deg);
+  }
+  @keyframes flip {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(180deg); }
+  }
+</style>
 <section data-aos="fade-up">
   <h2>Зміст книги за віком</h2>
   <div class="grid">
     <div class="card"><strong>3–6 років</strong><ul>
-      <li>1. Межі дозволеного: що дитина має знати про правила у суспільстві</li>
-      <li>2. Формування самостійності</li>
-      <li>3. Емоційна грамотність</li>
-      <li>4. Подолання страхів</li>
-      <li>5. Стійкість до труднощів</li>
-      <li>6. Підготовка до школи</li>
-      <li>7. Здорові звички</li>
-      <li>8. Повага і толерантність</li>
-      <li>9. Принципи безпеки</li>
-      <li>10. Фінансова свідомість</li>
+      <li>Межі дозволеного: що дитина має знати про правила у суспільстві.</li>
+      <li>Формування самостійності: простір для зростання дитини.</li>
+      <li>Емоційна грамотність: вміння називати та проживати емоції.</li>
+      <li>Подолання страхів: підтримка дитини у хвилюванні та тривозі.</li>
+      <li>Стійкість перед труднощами: як допомогти дитині переживати поразки.</li>
+      <li>Як підготувати дитину до школи без стресу. Як закласти любов до навчання з малечку.</li>
+      <li>Здорові звички щодня: рух, харчування та турбота про себе.</li>
+      <li>Повага як основа гідної особистості. Прийняття різноманіття: розвиток відкритості та толерантності у дитини.</li>
+      <li>Загальні принципи безпеки (як фізичної, так і емоційної).</li>
+      <li>Фінансова свідомість: перші кроки у відповідальному ставленні до грошей.</li>
     </ul></div>
+
     <div class="card"><strong>7–13 років</strong><ul>
-      <li>11. Відсутність батька</li>
-      <li>12. Сімейні цінності</li>
-      <li>13. Наставники і взірці</li>
-      <li>14. Довіра у стосунках</li>
-      <li>15. Емоційна стійкість</li>
-      <li>16. Захист гідності</li>
-      <li>17. Сприйняття критики</li>
-      <li>18. Пубертат</li>
-      <li>19. Безпека в інтернеті</li>
-      <li>20. Фінансова грамотність</li>
+      <li>Відсутність батька в житті дитини: чесна розмова з любов’ю та турботою. Мама — точка опори у світі змін і викликів.</li>
+      <li>Роль сімейних цінностей у формуванні характеру.</li>
+      <li>Роль взірців і наставників у житті дитини.</li>
+      <li>Довіра у стосунках з дитиною: основа глибокого зв’язку.</li>
+      <li>Розвиток впевненості у своїх силах та емоційної стійкості.</li>
+      <li>Захист гідності: профілактика булінгу та підтримка дитини в складних ситуаціях.</li>
+      <li>Сприйняття критики: формування зрілого ставлення до зворотного зв’язку.</li>
+      <li>Початок пубертату: зміни в організмі, емоціях і соціальних стосунках.</li>
+      <li>Безпека і здорові звички в мережі інтернет.</li>
+      <li>Фінансова грамотність для підлітків.</li>
     </ul></div>
+
     <div class="card"><strong>14–18 років</strong><ul>
-      <li>21. Дорослішання в довірі</li>
-      <li>22. Психічне здоров’я</li>
-      <li>23. Перші стосунки</li>
-      <li>24. Кар’єра</li>
-      <li>25. Цінності і переконання</li>
-      <li>26. Шкідливі звички</li>
-      <li>27. Soft skills</li>
-      <li>28. Патріотизм і позиція</li>
-      <li>29. Соцмережі</li>
-      <li>30. Юридична самостійність</li>
+      <li>Без війни вдома: як пережити підліткове дорослішання в довірі.</li>
+      <li>Психічне здоров’я підлітка: тривожність, депресія, панічні атаки. Як упоратися з почуттям самотності та ізоляції.</li>
+      <li>Перші романтичні стосунки: повага, межі й відповідальність. Сексуальна освіта і безпечна поведінка.</li>
+      <li>Професійне самовизначення: перші кроки до кар’єри.</li>
+      <li>Формування життєвих цінностей та переконань: внутрішній компас підлітка.</li>
+      <li>Профілактика шкідливих звичок і залежностей (цифрові, тютюн, алкоголь, наркотики).</li>
+      <li>Гнучкі навички (soft skills) для успішного дорослого життя.</li>
+      <li>Соціальна активність і громадянська позиція. Виховання патріотизму і громадянської свідомості.</li>
+      <li>“Мій особистий бренд”: як підлітку вести соцмережі без “псування” репутації в майбутньому.</li>
+      <li>Плавний перехід у доросле життя: юридичні й побутові аспекти.</li>
     </ul></div>
   </div>
 </section>
@@ -138,35 +181,34 @@
       <h3>PDF-книга</h3>
       <div class="price">200₴</div>
       <ul class="features">
-        <li>30 тем у форматі PDF</li>
-        <li>Група підтримки в Telegram</li>
-        <li class="no">Іменний підпис</li>
-        <li class="no">Консультація з автором</li>
+        <li>✅ Книга з 30 темами у PDF</li>
+        <li>✅ Telegram-група для мам</li>
+        <li>❌ Іменний підпис</li>
+        <li>❌ Консультація з автором</li>
       </ul>
     </div>
     <div class="tariff-card">
       <h3>Друкована книга</h3>
       <div class="price">400₴</div>
       <ul class="features">
-        <li>Друкована версія книги</li>
-        <li>Група підтримки в Telegram</li>
-        <li>Іменний підпис від автора</li>
-        <li class="no">Консультація з автором</li>
+        <li>✅ Друкована версія з 30 темами</li>
+        <li>✅ Telegram-група</li>
+        <li>✅ Іменний підпис від автора</li>
+        <li>❌ Консультація з автором</li>
       </ul>
     </div>
     <div class="tariff-card">
       <h3>Книга + психолог</h3>
       <div class="price">1200₴</div>
       <ul class="features">
-        <li>Друкована версія книги</li>
-        <li>Група підтримки в Telegram</li>
-        <li>Іменний підпис від автора</li>
-        <li>1 година консультації з автором</li>
+        <li>✅ Друкована версія з 30 темами</li>
+        <li>✅ Telegram-група</li>
+        <li>✅ Іменний підпис від автора</li>
+        <li>✅ 1 година консультації з автором</li>
       </ul>
     </div>
   </div>
 </section>
-
 <section id="purchase" data-aos="fade-up" style="background:#2b3f70;">
   <h2>Як придбати книгу</h2>
   <ol>
@@ -178,26 +220,59 @@
 
 <section data-aos="fade-up">
   <h2>Відгуки</h2>
-  <div class="grid">
-    <div class="card">“Ця книга допомогла мені зрозуміти мою дитину глибше.”</div>
-    <div class="card">“Проста, щира і дуже сильна підтримка.”</div>
-    <div class="card">“Після кожного розділу хочеться діяти.”</div>
-    <div class="card">“Відчула, що не одна. Дуже вдячна.”</div>
-    <div class="card">“Слова автора — як розмова з другом.”</div>
-    <div class="card">“Це не просто книга — це підтримка.”</div>
-    <div class="card">“Змогла по-новому подивитись на виховання.”</div>
-    <div class="card">“Коротко, по суті, емоційно.”</div>
-    <div class="card">“Мої діти вже помітили зміни.”</div>
-    <div class="card">“Дякую за натхнення і розуміння.”</div>
+  <div class="reviews-carousel">
+    <div class="review-track">
+      <div class="review">“Ця книга допомогла мені зрозуміти мою дитину глибше.”</div>
+      <div class="review">“Проста, щира і дуже сильна підтримка.”</div>
+      <div class="review">“Після кожного розділу хочеться діяти.”</div>
+      <div class="review">“Відчула, що не одна. Дуже вдячна.”</div>
+      <div class="review">“Слова автора — як розмова з другом.”</div>
+      <div class="review">“Це не просто книга — це підтримка.”</div>
+      <div class="review">“Змогла по-новому подивитись на виховання.”</div>
+      <div class="review">“Коротко, по суті, емоційно.”</div>
+      <div class="review">“Мої діти вже помітили зміни.”</div>
+      <div class="review">“Дякую за натхнення і розуміння.”</div>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p>Зв'язок: <a href="https://t.me/1234567">Telegram</a> | <a href="#">Instagram</a></p>
+<style>
+  .reviews-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .review-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollReviews 20s infinite linear;
+    width: max-content;
+  }
+  .review {
+    background: #1c2f5c;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 280px;
+    max-width: 280px;
+    font-style: italic;
+  }
+  @keyframes scrollReviews {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
+</style>
+<footer data-aos="fade-up">
+  <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
   <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: false });</script>
+<script>
+  AOS.init({ duration: 1000, once: false });
+</script>
 </body>
 </html>
