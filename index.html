@@ -26,18 +26,24 @@
       margin: 10px auto;
       text-align: left;
     }
-    .button {
-      background: white;
-      color: #1b2b54;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 8px;
-    }
     a {
       color: gold;
       text-decoration: underline;
+    }
+    .button {
+      background-color: #ffd700;
+      color: #1c2b4d;
+      padding: 12px 24px;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #ffcc00;
     }
     .grid, .tariffs {
       display: flex;
@@ -62,47 +68,54 @@
       font-weight: bold;
       margin: 10px 0;
     }
-    .features li::before {
-      content: "✔️ ";
-      color: lightgreen;
+    .tariff-list {
+      list-style-type: none;
+      padding-left: 0;
     }
-    .features .no::before {
-      content: "❌ ";
-      color: red;
+    .book-3d {
+      perspective: 1000px;
+      width: 240px;
+      height: 360px;
+      margin: 20px auto;
     }
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-}
-.button {
-  background-color: #ffd700; /* золота */
-  color: #1c2b4d;            /* темно-синій текст */
-  padding: 12px 24px;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-.button:hover {
-  background-color: #ffcc00;
-}
+    .book-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: flip 6s infinite alternate ease-in-out;
+    }
+    .book-front, .book-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+    .book-front {
+      background-image: url('book_front.jpg');
+    }
+    .book-back {
+      background-image: url('book_back.jpg');
+      transform: rotateY(180deg);
+    }
+    @keyframes flip {
+      0% { transform: rotateY(0); }
+      100% { transform: rotateY(180deg); }
+    }
   </style>
 </head>
 <body>
+
 <header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
   <h1 style="margin-bottom: 10px; font-size: 2.2em; max-width: 90vw; text-align: center;">Сильна мама — щаслива дитина</h1>
   <p style="margin-bottom: 30px; font-size: 1.1em; max-width: 90vw; text-align: center;">Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
-<button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })">
-  Придбати книгу
-</button>
+  <button class="button" onclick="document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })">
+    Придбати книгу
+  </button>
 </header>
-
 <section data-aos="fade-up">
   <h2>Про книгу</h2>
   <p>
@@ -118,41 +131,6 @@ header {
   </div>
 </section>
 
-<style>
-  .book-3d {
-    perspective: 1000px;
-    width: 240px;
-    height: 360px;
-    margin: 20px auto;
-  }
-  .book-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: flip 6s infinite alternate ease-in-out;
-  }
-  .book-front, .book-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-  }
-  .book-front {
-    background-image: url('book_front.jpg');
-  }
-  .book-back {
-    background-image: url('book_back.jpg');
-    transform: rotateY(180deg);
-  }
-  @keyframes flip {
-    0% { transform: rotateY(0); }
-    100% { transform: rotateY(180deg); }
-  }
-</style>
 <section data-aos="fade-up">
   <h2>Зміст книги за віком</h2>
   <div class="grid">
@@ -222,24 +200,25 @@ header {
       <h3>Друкована книга</h3>
       <div class="price">400₴</div>
       <ul class="tariff-list">
-        <li>✅ Друкована книга </li>
+        <li>✅ Друкована книга</li>
         <li>✅ Telegram-група для мам</li>
         <li>✅ Іменний підпис від автора</li>
         <li>❌ Година консультація з автором</li>
       </ul>
     </div>
     <div class="tariff-card">
-      <h3>Друкована книга + консультація</h3>
+      <h3>Книга + консультація</h3>
       <div class="price">1200₴</div>
       <ul class="tariff-list">
-        <li>✅ Друкована книга </li>
-        <li>✅ Telegram-група для мам </li>
+        <li>✅ Друкована книга</li>
+        <li>✅ Telegram-група для мам</li>
         <li>✅ Іменний підпис від автора</li>
         <li>✅ Година консультація з автором</li>
       </ul>
     </div>
   </div>
 </section>
+
 <section id="purchase" data-aos="fade-up" style="background:#2b3f70;">
   <h2>Як придбати книгу</h2>
   <ol>
@@ -248,41 +227,20 @@ header {
     <li>Надішліть його в Telegram: <a href="https://t.me/1234567">@1234567</a> — менеджер відповість і надішле книгу</li>
   </ol>
 </section>
-
 <section data-aos="fade-up">
   <h2>Відгуки</h2>
   <div class="reviews-carousel">
     <div class="review-track">
-  <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
-  <div class="review">“Читається легко, а змінює — глибоко.”</div>
-  <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
-  <div class="review">“Найкраща інвестиція за 200 грн.”</div>
-  <div class="review">“Кожна тема — як окрема терапія.”</div>
-  <div class="review">“Чоловік теж зацікавився після кількох сторінок!”</div>
-  <div class="review">“Нарешті щось практичне, а не вода.”</div>
-  <div class="review">“Моя подруга вже теж читає — їй зайшло.”</div>
-  <div class="review">“Змінила підхід до виховання — і діти це відчули.”</div>
-  <div class="review">“Сама не очікувала, що книжка мене зворушить.”</div>
-  <div class="review">“Брала як експеримент, а тепер читаю щодня.”</div>
-  <div class="review">“Змістово, красиво, доступно — все як треба.”</div>
-  <div class="review">“Було відчуття, що автор говорить зі мною.”</div>
-  <div class="review">“Книга, яку хочеться подарувати кожній мамі.”</div>
-  <div class="review">“Сильно. Щиро. Дякую за цю працю.”</div>
-  <div class="review">“Тепер розумію, що значить — бути опорою.”</div>
-  <div class="review">“Після 3-го розділу сльози на очах.”</div>
-  <div class="review">“Тепер я не боюсь бути мамою без тата поруч.”</div>
-  <div class="review">“Це не просто книжка — це розмова по душі.”</div>
-  <div class="review">“Тепер я впевнена: сильна мама — це я.”</div>
-      <div class="review">“Ця книга допомогла мені зрозуміти мою дитину глибше.”</div>
-      <div class="review">“Проста, щира і дуже сильна підтримка.”</div>
-      <div class="review">“Після кожного розділу хочеться діяти.”</div>
-      <div class="review">“Відчула, що не одна. Дуже вдячна.”</div>
-      <div class="review">“Слова автора — як розмова з другом.”</div>
-      <div class="review">“Це не просто книга — це підтримка.”</div>
-      <div class="review">“Змогла по-новому подивитись на виховання.”</div>
-      <div class="review">“Коротко, по суті, емоційно.”</div>
-      <div class="review">“Мої діти вже помітили зміни.”</div>
-      <div class="review">“Дякую за натхнення і розуміння.”</div>
+      <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
+      <div class="review">“Читається легко, а змінює — глибоко.”</div>
+      <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
+      <div class="review">“Найкраща інвестиція за 200 грн.”</div>
+      <div class="review">“Кожна тема — як окрема терапія.”</div>
+      <div class="review">“Чоловік теж зацікавився після кількох сторінок!”</div>
+      <div class="review">“Нарешті щось практичне, а не вода.”</div>
+      <div class="review">“Моя подруга вже теж читає — їй зайшло.”</div>
+      <div class="review">“Змінила підхід до виховання — і діти це відчули.”</div>
+      <div class="review">“Сама не очікувала, що книжка мене зворушить.”</div>
     </div>
   </div>
 </section>
@@ -298,7 +256,7 @@ header {
   .review-track {
     display: flex;
     gap: 20px;
- animation: scrollReviews 400s ease-in-out forwards;
+    animation: scrollReviews 60s linear infinite;
     width: max-content;
   }
   .review {
@@ -311,18 +269,12 @@ header {
   }
   @keyframes scrollReviews {
     0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
-.tariff-list {
-  list-style-type: none;
-  padding-left: 0;
-}
 </style>
+
 <footer data-aos="fade-up">
   <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
   <p style="font-size: 0.8em;">© 2025 Сильна мама — щаслива дитина</p>
 </footer>
-</body>
 </html>
