@@ -2,25 +2,45 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сильна мама — щаслива дитина</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    body { margin: 0; font-family: sans-serif; background-color: #1b2b54; color: white; scroll-behavior: smooth; }
-    #content { padding-bottom: 60px; }
+    body { margin: 0; font-family: sans-serif; background-color: #1c2a4a; color: white; }
+    section, header, footer { padding: 40px 20px; text-align: center; }
+    .book { width: 240px; height: 360px; background: url('book_front.jpg') center/cover; margin: auto; border-radius: 10px; }
   </style>
 </head>
 <body>
-  <div id="content">Завантаження сайту...</div>
-  <script>
-    fetch('sections.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('content').innerHTML = data;
-        AOS.init({ duration: 1000, once: false });
-      });
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<header>
+  <h1>Сильна мама — щаслива дитина</h1>
+  <p>Ця книга — не про відсутність батька. Вона про присутність сильної мами.</p>
+</header>
+<section>
+  <h2>Про книгу</h2>
+  <p>Ця книга — не теорія, а практичні розмови. Про любов. Про межі. Про силу мами.</p>
+  <div class="book"></div>
+</section>
+<section>
+  <h2>Про що ця книга?</h2>
+  <ul>
+    <li>1. Межі дозволеного: правила у суспільстві</li>
+    <li>2. Самостійність: простір для зростання</li>
+    <li>3. Емоційна грамотність</li>
+    <li>4. Подолання страхів</li>
+    <li>5–30: (інші теми)</li>
+  </ul>
+</section>
+<section>
+  <h2>Як придбати книгу</h2>
+  <ol>
+    <li>Оплатіть на “Банку”: <code>1234567</code></li>
+    <li>Зробіть скріншот</li>
+    <li>Надішліть у Telegram: <a href="https://t.me/1234567">@1234567</a></li>
+  </ol>
+</section>
+<footer>
+  <p>Зв'язок: <a href="https://t.me/1234567">Telegram</a></p>
+</footer>
 </body>
 </html>
