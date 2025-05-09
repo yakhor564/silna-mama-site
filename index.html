@@ -77,6 +77,21 @@ header {
   text-align: center;
   padding: 40px 20px;
 }
+.button {
+  background-color: #ffd700; /* золота */
+  color: #1c2b4d;            /* темно-синій текст */
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #ffcc00;
+}
   </style>
 </head>
 <body>
@@ -283,7 +298,7 @@ header {
   .review-track {
     display: flex;
     gap: 20px;
-   animation: scrollReviews 150s infinite ease-in-out;
+   animation: scrollReviews 300s infinite ease-in-out;
     width: max-content;
   }
   .review {
