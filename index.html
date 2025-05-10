@@ -152,11 +152,12 @@ header {
   background-image: url('book_back.jpg');
   transform: rotateY(180deg) translateZ(10px);
 }
-.book-spine {
+..book-spine {
   width: 20px;
   height: 360px;
   background-color: #f1e9d3;
-  transform: rotateY(90deg) translateZ(110px); /* було -120px */
+  transform: rotateY(90deg) translateZ(120px); /* чітко між front і back */
+  transform-origin: left center;
   left: 0;
 }
 @keyframes rotateBook {
