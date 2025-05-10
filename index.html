@@ -262,7 +262,7 @@ header {
 <section data-aos="fade-up">
   <h2>Відгуки</h2>
   <div class="reviews-carousel">
-    <div class="review-track">
+ <div class="review-track">
   <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
   <div class="review">“Читається легко, а змінює — глибоко.”</div>
   <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
@@ -283,17 +283,27 @@ header {
   <div class="review">“Тепер я не боюсь бути мамою без тата поруч.”</div>
   <div class="review">“Це не просто книжка — це розмова по душі.”</div>
   <div class="review">“Тепер я впевнена: сильна мама — це я.”</div>
-      <div class="review">“Ця книга допомогла мені зрозуміти мою дитину глибше.”</div>
-      <div class="review">“Проста, щира і дуже сильна підтримка.”</div>
-      <div class="review">“Після кожного розділу хочеться діяти.”</div>
-      <div class="review">“Відчула, що не одна. Дуже вдячна.”</div>
-      <div class="review">“Слова автора — як розмова з другом.”</div>
-      <div class="review">“Це не просто книга — це підтримка.”</div>
-      <div class="review">“Змогла по-новому подивитись на виховання.”</div>
-      <div class="review">“Коротко, по суті, емоційно.”</div>
-      <div class="review">“Мої діти вже помітили зміни.”</div>
-      <div class="review">“Дякую за натхнення і розуміння.”</div>
-    </div>
+  <div class="review">“Відчувається турбота в кожному слові. Дуже дякую.”</div>
+  <div class="review">“Читається легко, а змінює — глибоко.”</div>
+  <div class="review">“Тепер знаю, як бути впевненою мамою.”</div>
+  <div class="review">“Найкраща інвестиція за 200 грн.”</div>
+  <div class="review">“Кожна тема — як окрема терапія.”</div>
+  <div class="review">“Чоловік теж зацікавився після кількох сторінок!”</div>
+  <div class="review">“Нарешті щось практичне, а не вода.”</div>
+  <div class="review">“Моя подруга вже теж читає — їй зайшло.”</div>
+  <div class="review">“Змінила підхід до виховання — і діти це відчули.”</div>
+  <div class="review">“Сама не очікувала, що книжка мене зворушить.”</div>
+  <div class="review">“Брала як експеримент, а тепер читаю щодня.”</div>
+  <div class="review">“Змістово, красиво, доступно — все як треба.”</div>
+  <div class="review">“Було відчуття, що автор говорить зі мною.”</div>
+  <div class="review">“Книга, яку хочеться подарувати кожній мамі.”</div>
+  <div class="review">“Сильно. Щиро. Дякую за цю працю.”</div>
+  <div class="review">“Тепер розумію, що значить — бути опорою.”</div>
+  <div class="review">“Після 3-го розділу сльози на очах.”</div>
+  <div class="review">“Тепер я не боюсь бути мамою без тата поруч.”</div>
+  <div class="review">“Це не просто книжка — це розмова по душі.”</div>
+  <div class="review">“Тепер я впевнена: сильна мама — це я.”</div>
+</div>
   </div>
 </section>
 
@@ -305,12 +315,12 @@ header {
     max-width: 960px;
     margin: 0 auto;
   }
-  .review-track {
-    display: flex;
-    gap: 20px;
- animation: scrollReviews 400s ease-in-out forwards;
-    width: max-content;
-  }
+.review-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollReviews 400s linear infinite;
+}
   .review {
     background: #4fa38c;
     padding: 20px;
@@ -319,12 +329,10 @@ header {
     max-width: 280px;
     font-style: italic;
   }
-  @keyframes scrollReviews {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-  }
+@keyframes scrollReviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 .tariff-list {
   list-style-type: none;
   padding-left: 0;
