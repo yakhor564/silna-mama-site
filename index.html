@@ -111,76 +111,64 @@ header {
     Написана просто — як лист підтримки. Для тебе.
   </p>
 <section data-aos="fade-up">
-  <h2 style="text-align: center;">Книга</h2>
+  <h2>Книга</h2>
   <div class="book-3d">
     <div class="book-inner">
-      <div class="book-face book-front"></div>
-      <div class="book-face book-back"></div>
-      <div class="book-face book-spine-left"></div>
-      <div class="book-face book-spine-right"></div>
+      <div class="book-face front"></div>
+      <div class="book-face spine-left"></div>
+      <div class="book-face back"></div>
+      <div class="book-face spine-right"></div>
     </div>
   </div>
 </section>
 
 <style>
-.book-3d {
-  perspective: 1200px;
-  width: 240px;
-  height: 360px;
-  margin: 40px auto;
-}
-.book-inner {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: rotateBook 12s infinite linear;
-  position: relative;
-}
-.book-face {
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-  border-radius: 4px;
-}
+  .book-3d {
+    perspective: 1000px;
+    width: 240px;
+    height: 360px;
+    margin: 40px auto;
+  }
+  .book-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spinBook 10s linear infinite;
+  }
+  .book-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .front {
+    background-image: url('book_front.jpg');
+    transform: rotateY(0deg) translateZ(15px);
+  }
+  .spine-left {
+    background-color: #f3e9c9;
+    width: 30px;
+    left: -15px;
+    transform: rotateY(90deg) translateZ(120px);
+  }
+  .back {
+    background-image: url('book_back.jpg');
+    transform: rotateY(180deg) translateZ(15px);
+  }
+  .spine-right {
+    background-color: #f3e9c9;
+    width: 30px;
+    left: calc(100% - 15px);
+    transform: rotateY(-90deg) translateZ(120px);
+  }
 
-/* Передня обкладинка */
-.book-front {
-  width: 240px;
-  height: 360px;
-  background-image: url('book_front.jpg');
-  transform: rotateY(0deg) translateZ(10px);
-}
-
-/* Задня обкладинка */
-.book-back {
-  width: 240px;
-  height: 360px;
-  background-image: url('book_back.jpg');
-  transform: rotateY(180deg) translateZ(10px);
-}
-
-/* Лівий корінець */
-.book-spine-left {
-  width: 20px;
-  height: 360px;
-  background-color: #f1e9d3;
-  transform: rotateY(90deg) translateZ(120px);
-  left: 0;
-}
-
-/* Правий корінець */
-.book-spine-right {
-  width: 20px;
-  height: 360px;
-  background-color: #f1e9d3;
-  transform: rotateY(-90deg) translateZ(120px);
-  right: 0;
-}
-
-@keyframes rotateBook {
-  0%   { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
+  @keyframes spinBook {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
 </style>
 <section data-aos="fade-up">
   <h2>Про автора</h2>
