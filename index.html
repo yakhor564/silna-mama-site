@@ -111,12 +111,12 @@ header {
     Написана просто — як лист підтримки. Для тебе.
   </p>
 <section data-aos="fade-up">
-  <h2>Книга</h2>
+  <h2 style="text-align: center;">Книга</h2>
   <div class="book-3d">
-     <div class="book-inner">
+    <div class="book-inner">
       <div class="book-face book-front"></div>
-      <div class="book-face book-spine-left"></div>
       <div class="book-face book-back"></div>
+      <div class="book-face book-spine-left"></div>
       <div class="book-face book-spine-right"></div>
     </div>
   </div>
@@ -136,7 +136,6 @@ header {
   animation: rotateBook 12s infinite linear;
   position: relative;
 }
-
 .book-face {
   position: absolute;
   background-size: cover;
@@ -165,8 +164,8 @@ header {
   width: 20px;
   height: 360px;
   background-color: #f1e9d3;
-  left: -10px;
-  transform: rotateY(-90deg) translateZ(120px);
+  transform: rotateY(90deg) translateZ(120px);
+  left: 0;
 }
 
 /* Правий корінець */
@@ -174,13 +173,8 @@ header {
   width: 20px;
   height: 360px;
   background-color: #f1e9d3;
-  left: 230px;
-  transform: rotateY(90deg) translateZ(120px);
-}
-
-@keyframes rotateBook {
-  0%   { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
+  transform: rotateY(-90deg) translateZ(120px);
+  right: 0;
 }
 
 @keyframes rotateBook {
