@@ -370,27 +370,48 @@ header {
   list-style-type: none;
   padding-left: 0;
 }
- .review {
-      position: relative;
-      background: #e9f6f2;
-      color: #1c2b4d;
-      padding: 20px;
-      border-radius: 16px;
-      min-width: 280px;
-      max-width: 280px;
-      font-style: italic;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+.reviews-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
 
-    .review::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 30px;
-      border-width: 10px 10px 0;
-      border-style: solid;
-      border-color: #e9f6f2 transparent transparent transparent;
-    }
+.review-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollReviews 60s linear infinite;
+  width: max-content;
+}
+
+.review {
+  position: relative;
+  background: #fef7f2;
+  color: #1c2b4d;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 280px;
+  max-width: 280px;
+  font-style: italic;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 30px;
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: #fef7f2 transparent transparent transparent;
+}
+
+@keyframes scrollReviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 </style>
 <footer data-aos="fade-up">
   <p>Зв'язок: <a href="https://t.me/1234567" target="_blank">Telegram</a> | <a href="#" target="_blank">Instagram</a></p>
