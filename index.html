@@ -115,8 +115,8 @@ header {
   <div class="book-3d">
     <div class="book-inner">
       <div class="book-face front"></div>
-      <div class="book-face spine-left"></div>
       <div class="book-face back"></div>
+      <div class="book-face spine-left"></div>
       <div class="book-face spine-right"></div>
     </div>
   </div>
@@ -129,40 +129,47 @@ header {
     height: 360px;
     margin: 40px auto;
   }
+
   .book-inner {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    animation: spinBook 10s linear infinite;
+    animation: spinBook 12s linear infinite;
   }
+
   .book-face {
     position: absolute;
-    width: 100%;
+    top: 0;
+    left: 0;
     height: 100%;
-    backface-visibility: hidden;
     background-size: cover;
     background-position: center;
   }
+
   .front {
+    width: 240px;
     background-image: url('book_front.jpg');
     transform: rotateY(0deg) translateZ(15px);
   }
-  .spine-left {
-    background-color: #f3e9c9;
-    width: 30px;
-    left: -15px;
-    transform: rotateY(90deg) translateZ(120px);
-  }
+
   .back {
+    width: 240px;
     background-image: url('book_back.jpg');
     transform: rotateY(180deg) translateZ(15px);
   }
-  .spine-right {
-    background-color: #f3e9c9;
+
+  .spine-left, .spine-right {
     width: 30px;
-    left: calc(100% - 15px);
-    transform: rotateY(-90deg) translateZ(120px);
+    background-color: #f3e9c9;
+  }
+
+  .spine-left {
+    transform: rotateY(90deg) translateZ(120px) translateX(-15px);
+  }
+
+  .spine-right {
+    transform: rotateY(-90deg) translateZ(120px) translateX(-15px);
   }
 
   @keyframes spinBook {
