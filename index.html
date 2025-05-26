@@ -95,8 +95,7 @@ header {
   </style>
 </head>
 <body>
-<!-- Навігація -->
-<nav class="nav-menu">
+<nav class="nav-scroll">
   <a href="#about">Про книгу</a>
   <a href="#author">Про автора</a>
   <a href="#content">Зміст</a>
@@ -105,49 +104,40 @@ header {
   <a href="#footer">Звʼязок</a>
 </nav>
 
-<!-- Відступ для контенту -->
-<div style="height: 50px;"></div>
-
 <style>
-  .nav-menu {
+  .nav-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #1d6e5c;
+    padding: 10px 10px;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1d6e5c;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 0;
     z-index: 1000;
-    flex-wrap: wrap;
   }
 
-  .nav-menu a {
-    color: #ffffff;
-    padding: 8px 16px;
+  .nav-scroll a {
+    display: inline-block;
+    color: #fff;
     text-decoration: none;
+    padding: 8px 14px;
+    margin-right: 8px;
     border-radius: 20px;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
+    background-color: transparent;
+    transition: background 0.3s ease;
     font-size: 0.95em;
   }
 
-  .nav-menu a:hover {
+  .nav-scroll a:hover {
     background-color: #ffc107;
     color: #000;
   }
 
-  @media (max-width: 480px) {
-    .nav-menu {
-      gap: 5px;
-      padding: 8px;
-    }
-
-    .nav-menu a {
-      padding: 6px 12px;
-      font-size: 0.85em;
-    }
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
   }
+</style>
+
 </style>
 
 
