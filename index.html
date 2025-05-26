@@ -95,39 +95,61 @@ header {
   </style>
 </head>
 <body>
-<nav style="position: fixed; top: 0; width: 100%; background-color: #257963; z-index: 1000; padding: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-  <a href="#about" class="nav-link">Про книгу</a>
-  <a href="#author" class="nav-link">Про автора</a>
-  <a href="#content" class="nav-link">Зміст</a>
-  <a href="#plans" class="nav-link">Тарифи</a>
-  <a href="#reviews" class="nav-link">Відгуки</a>
-  <a href="#footer" class="nav-link">Звʼязок</a>
+<!-- Навігація -->
+<nav class="nav-menu">
+  <a href="#about">Про книгу</a>
+  <a href="#author">Про автора</a>
+  <a href="#content">Зміст</a>
+  <a href="#plans">Тарифи</a>
+  <a href="#reviews">Відгуки</a>
+  <a href="#footer">Звʼязок</a>
 </nav>
 
-<div style="height: 80px;"></div>
+<!-- Відступ для контенту -->
+<div style="height: 50px;"></div>
 
 <style>
-  .nav-link {
-    padding: 8px 14px;
-    background-color: #3a9c81;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 0.95em;
-    transition: background-color 0.3s ease;
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1d6e5c;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    z-index: 1000;
+    flex-wrap: wrap;
   }
 
-  .nav-link:hover {
-    background-color: #4fa38c;
+  .nav-menu a {
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95em;
+  }
+
+  .nav-menu a:hover {
+    background-color: #ffc107;
+    color: #000;
   }
 
   @media (max-width: 480px) {
-    .nav-link {
+    .nav-menu {
+      gap: 5px;
+      padding: 8px;
+    }
+
+    .nav-menu a {
+      padding: 6px 12px;
       font-size: 0.85em;
-      padding: 6px 10px;
     }
   }
 </style>
+
 
 <header style="padding: 40px 20px; display: flex; flex-direction: column; align-items: center; text-align: center;" data-aos="fade-down">
   <h1 style="margin-bottom: 10px; font-size: 2.2em; max-width: 90vw; text-align: center;">Сильна мама — щаслива дитина</h1>
